@@ -33,10 +33,70 @@ class Human
 
 $me = new Human();
 ?>
+```
 
 - Việc khai báo thuộc tính/phương thức thường bắt đầu bằng các từ khóa biểu thị khả năng try cập:
     + private: Chỉ được sử dụng trong Class, lớp con cũng không thể sử dụng.
     + protected: giông private nhưng được kế thừa và sử dụng ở lớp con.
     + public: giống protected nhưng bên ngoài vẫ có thể sử dụng bình thường.
 
-(còn tiếp...)
+```
+class Human {
+    private name;
+    privatec age;
+
+    function Human($name, $age) {
+        $this->name = $name;
+        $this->age = $age;
+    }
+    public function Run() {
+        echo $this->name . "is running....";
+    }
+}
+
+$me = new Human("Gia Hao", 20);
+$me->run();
+```
+
+### Kế thừa - Da Hình
+```
+class Human {
+    protected name;
+    protected age;
+
+    function Human($name, $age) {
+        $this->name = $name;
+        $this->age = $age;
+    }
+    public function Run() {
+        echo $this->name . "is running....";
+    }
+}
+
+class Vietnamese {
+    public funtion Run() {
+        parent::Run();
+        echo $this->name . "đang chạy.....";
+    }
+}
+
+class Chinese {
+    public funtion Run() {
+        parent::Run();
+        echo $this->name . "正在跑步.....";
+    }
+}
+
+$Phong = new Vietnamese("Phong", 22);
+$Phong->Run();
+$Ztao = new Chinese("Ztao", 26);
+$Ztao->Run();
+```
+
+### Interface && Abstract
+- Interface định nghĩa tập hợp các method, những class sử dụng interface đều cần phải có những method của nó.
+- Abstract được xem như là 1 class, các class khác có thể kế thừa Abstract.
+
+
+
+
