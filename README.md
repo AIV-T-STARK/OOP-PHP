@@ -43,7 +43,7 @@ $me = new Human();
 ```
 class Human {
     private name;
-    privatec age;
+    private age;
 
     function Human($name, $age) {
         $this->name = $name;
@@ -73,14 +73,14 @@ class Human {
     }
 }
 
-class Vietnamese {
+class Vietnamese extends Human {
     public funtion Run() {
         parent::Run();
         echo $this->name . "đang chạy.....";
     }
 }
 
-class Chinese {
+class Chinese extends Human {
     public funtion Run() {
         parent::Run();
         echo $this->name . "正在跑步.....";
@@ -92,11 +92,7 @@ $Phong->Run();
 $Ztao = new Chinese("Ztao", 26);
 $Ztao->Run();
 ```
+## Overload - Override
 
-### Interface && Abstract
-- Interface định nghĩa tập hợp các method, những class sử dụng interface đều cần phải có những method của nó.
-- Abstract được xem như là 1 class, các class khác có thể kế thừa Abstract.
-
-
-
+### Abstruct - Interface
 
